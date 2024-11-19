@@ -1,5 +1,5 @@
-import java.util.Date;
 import java.util.Vector;
+import java.util.Date;
 
 public class Client {
 	private String nom;
@@ -15,6 +15,11 @@ public class Client {
 		this.naissance = naissance;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+
+	// Méthode pour gérer les comptes
 	public void gererCompte(Compte compte, float montant, boolean deposer) {
 		if (deposer) {
 			compte.deposer(montant);

@@ -1,10 +1,7 @@
-import java.util.Vector;
-
 public class Compte {
 	private int numero;
 	private float solde;
 	public Client proprietaire;
-	public Vector<Banquier> gerants = new Vector<>();
 	private static int compteur = 1;
 
 	public Compte(float soldeInitial) {
@@ -32,4 +29,15 @@ public class Compte {
 		return solde;
 	}
 
+	public String getType() {
+		return "Compte"; // Définir un type de base
+	}
+
+	public float getParam1() {
+		return 0;
+	}
+
+	public float getParam2() {
+		return 0;
+	}
 }

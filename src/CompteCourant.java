@@ -16,4 +16,19 @@ public class CompteCourant extends Compte {
 			System.out.println("Découvert dépassé !");
 		}
 	}
+
+	@Override
+	public String getType() {
+		return "Courant";
+	}
+
+	@Override
+	public float getParam1() {
+		return decouvertAutorise;
+	}
+
+	@Override
+	public float getParam2() {
+		return fraisDecouvert;
+	}
 }

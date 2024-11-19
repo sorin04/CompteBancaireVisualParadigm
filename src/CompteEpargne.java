@@ -1,23 +1,34 @@
 public class CompteEpargne extends Compte {
-	private float plafond;
-	private float taux;
+	private float tauxInteret;
+	private float soldeMin;
 
-	public CompteEpargne(float soldeInitial, float plafond, float taux) {
+	public CompteEpargne(float soldeInitial, float tauxInteret, float soldeMin) {
 		super(soldeInitial);
-		this.plafond = plafond;
-		this.taux = taux;
-	}
-
-	public float calculerInterets() {
-		return getSolde() * (taux / 100);
+		this.tauxInteret = tauxInteret;
+		this.soldeMin = soldeMin;
 	}
 
 	@Override
-	public void deposer(float montant) {
-		if (getSolde() + montant <= plafond) {
-			super.deposer(montant);
+	public void retirer(float montant) {
+		if (getSolde() - montant >= soldeMin) {
+			super.retirer(montant);
 		} else {
-			System.out.println("Dépassement du plafond !");
+			System.out.println("Solde minimum requis.");
 		}
+	}
+
+	@Override
+	public String getType() {
+		return "Epargne";
+	}
+
+	@Override
+	public float getParam1() {
+		return tauxInteret;
+	}
+
+	@Override
+	public float getParam2() {
+		return soldeMin;
 	}
 }
