@@ -19,7 +19,6 @@ public class Client {
 		return nom;
 	}
 
-	// Méthode pour gérer les comptes
 	public void gererCompte(Compte compte, float montant, boolean deposer) {
 		if (deposer) {
 			compte.deposer(montant);
